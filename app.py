@@ -4,7 +4,7 @@ import os
 import aws_cdk as cdk
 
 from pipeline_webinar.pipeline_webinar_stack import PipelineWebinarStack
-
+from pipeline_webinar.pipeline_stack import PipelineStack
 
 app = cdk.App()
 PipelineWebinarStack(app, "PipelineWebinarStack",
@@ -24,5 +24,5 @@ PipelineWebinarStack(app, "PipelineWebinarStack",
 
     # For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html
     )
-
+PipelineStack(app, "PipelineStack", env=cdk.Environment(account="213911150042", region="us-west-2"))
 app.synth()
